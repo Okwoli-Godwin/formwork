@@ -6,7 +6,7 @@ import {  useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 // import LoadingState from "../../../LoadingScreen";
 
-export const url = "http://localhost:3030/app/router"
+export const url = "https://formchi.onrender.com/app/router"
 
 const CompanyChoice = () => {
 	const { id } = useParams();
