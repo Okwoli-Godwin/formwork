@@ -6,7 +6,7 @@ import {  useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 // import LoadingState from "../../../LoadingScreen";
 
-export const url = "http://localhost: 3030/app/router"
+export const url = "http://localhost:3030/app/router"
 
 const CompanyChoice = () => {
 	const { id } = useParams();
@@ -34,7 +34,8 @@ const CompanyChoice = () => {
 				});
 				setLoading(false);
 			})
-			.catch((error) => {
+            .catch((error) => {
+                console.log(error)
 				Swal.fire({
 					position: "center",
 					icon: "error",
