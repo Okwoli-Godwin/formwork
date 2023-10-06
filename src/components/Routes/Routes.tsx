@@ -10,7 +10,7 @@ const Routes = () => {
             element: <Formdetails />
         },
         {
-            path: "/accept",
+            path: "/:id/accept",
             element: <YesorNo />
         }
     ])
