@@ -39,7 +39,7 @@ const CompanyChoice = () => {
 				Swal.fire({
 					position: "center",
 					icon: "error",
-					title: `Error: ${error}`,
+					title: `Error: ${error} || ${error?.message}`,
 					showConfirmButton: false,
 					timer: 2500,
 				}).then(() => {
