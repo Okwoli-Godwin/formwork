@@ -13,7 +13,7 @@ const Formdetails: React.FC = () => {
   const [email, setEmail] = useState<string>('');
   const [phoneNumber, setPhoneNumber] = useState<string>('');
   const [address, setaddress] = useState<string>('');
-  const [dateofbirth, setdateofbirth] = useState<string>("");
+  const [dateOfBirth, setdateOfBirth] = useState<string>("");
   const [married, setMarried] = useState<string>("")
   const [car, setCar] = useState<string>("")
   const [pet, setPet] = useState<string>("")
@@ -24,7 +24,7 @@ const Formdetails: React.FC = () => {
   const [movingIn, setMovingIn] = useState<string>("")
   const [security, setSecurity] = useState<string>("")
   const [paying, setPaying] = useState<string>("")
-  const [applicationFee, setApplicationFee] = useState<string>("")
+  const [ApplicationFee, setApplicationFee] = useState<string>("")
   const [nowPayment, setNowPayment] = useState<string>("")
   const [question, setQuestion] = useState<string>("")
   const [signature, setSignature] = useState<string>("")
@@ -36,7 +36,7 @@ const Formdetails: React.FC = () => {
     email: yup.string().email().required('Field is required'),
     phoneNumber: yup.number().required('Field is required'),
     address: yup.string().required('Field is required'),
-    dateofbirth: yup.string().required('Field is required'),
+    dateOfBirth: yup.string().required('Field is required'),
     married: yup.string().required("Field is required"),
     car: yup.string().required("Filed is required"),
     pet: yup.string().required("Field is required"),
@@ -47,7 +47,7 @@ const Formdetails: React.FC = () => {
     movingIn: yup.string().required("Field is required"),
     security: yup.string().required("Field is required"),
     paying: yup.string().required("Field is required"),
-    applicationFee: yup.string().required("Field is required"),
+    ApplicationFee: yup.string().required("Field is required"),
     nowPayment: yup.string().required("Field is required"),
     question: yup.string().required("Field is required"),
     signature: yup.string().required("Field is required")
@@ -70,7 +70,7 @@ const Formdetails: React.FC = () => {
         email,
         phoneNumber,
         address,
-        dateofbirth,
+        dateOfBirth,
         married,
         car,
         pet,
@@ -81,19 +81,19 @@ const Formdetails: React.FC = () => {
         movingIn,
         security,
         paying,
-        applicationFee,
+        ApplicationFee,
         nowPayment,
         question,
         signature
       });
 
-      await axios.post(`http://localhost: 3030/app/router/postmessage`, {
+      await axios.post(`https://formchi.onrender.com/app/router/postmessage`, {
         name,
         gender,
         email,
         phoneNumber,
         address,
-        dateofbirth,
+        dateOfBirth,
         married,
         car,
         pet,
@@ -104,7 +104,7 @@ const Formdetails: React.FC = () => {
         movingIn,
         security,
         paying,
-        applicationFee,
+        ApplicationFee,
         nowPayment,
         question,
         signature
@@ -117,16 +117,17 @@ const Formdetails: React.FC = () => {
       });
 
     } catch (error) {
+        console.log(error)
       Swal.fire({
         icon: 'error',
-        title: 'Validation Error'
+        title: "error"
       });
     }
   };
 
   return (
     <Container>
-      <Wrapper onSubmit={handleSubmit(Fetch)}>
+      <Wrapper onSubmit={Fetch}>
         <First>
           <Top></Top>
           <h2>Rental Application Form</h2>
@@ -201,9 +202,9 @@ const Formdetails: React.FC = () => {
         <Second>
           <p>Date of birth <span>*</span></p>
           <input
-            {...register('dateofbirth')}
+            {...register('dateOfBirth')}
             type="text"
-            onChange={(e) =>setdateofbirth(e.target.value)}
+            onChange={(e) =>setdateOfBirth(e.target.value)}
             placeholder='Your answer'
           />
         </Second>
@@ -357,9 +358,10 @@ const Formdetails: React.FC = () => {
           <p>Application fee of $70 <span>*</span></p>
       <label style={{justifyContent: "flex-start", alignItems: "center", display: "flex", marginTop: "20px"}}>
         <Radio
+          {...register('ApplicationFee')}
           type="radio"
           value="Zelle"
-          checked={applicationFee === "Zelle"} // Step 3: Check if this radio is selected
+          checked={ApplicationFee === "Zelle"} // Step 3: Check if this radio is selected
           onChange={(e) => setApplicationFee(e.target.value)}
           style={{height: "20px", width: "20px", marginRight: "12px"}}
         />
@@ -368,9 +370,10 @@ const Formdetails: React.FC = () => {
       
         <label style={{justifyContent: "flex-start", alignItems: "center", display: "flex", marginTop: "15px"}}>
         <Radio
+          {...register('ApplicationFee')}
           type="radio"
           value="Cashapp"
-          checked={applicationFee === "Cashapp"} // Step 3: Check if this radio is selected
+          checked={ApplicationFee === "Cashapp"} // Step 3: Check if this radio is selected
           onChange={(e) => setApplicationFee(e.target.value)}
           style={{height: "20px", width: "20px", marginRight: "12px"}}
         />
@@ -379,9 +382,10 @@ const Formdetails: React.FC = () => {
           
           <label style={{justifyContent: "flex-start", alignItems: "center", display: "flex", marginTop: "15px"}}>
         <Radio
+          {...register('ApplicationFee')}
           type="radio"
           value="Venmo"
-          checked={applicationFee === "Venmo"} // Step 3: Check if this radio is selected
+          checked={ApplicationFee === "Venmo"} // Step 3: Check if this radio is selected
           onChange={(e) => setApplicationFee(e.target.value)}
           style={{height: "20px", width: "20px", marginRight: "12px"}}
         />
@@ -390,9 +394,10 @@ const Formdetails: React.FC = () => {
           
           <label style={{justifyContent: "flex-start", alignItems: "center", display: "flex", marginTop: "15px"}}>
         <Radio
+          {...register('ApplicationFee')}
           type="radio"
           value="Chime"
-          checked={applicationFee === "Chime"} // Step 3: Check if this radio is selected
+          checked={ApplicationFee === "Chime"} // Step 3: Check if this radio is selected
           onChange={(e) => setApplicationFee(e.target.value)}
           style={{height: "20px", width: "20px", marginRight: "12px"}}
         />
@@ -401,9 +406,10 @@ const Formdetails: React.FC = () => {
 
           <label style={{justifyContent: "flex-start", alignItems: "center", display: "flex", marginTop: "15px"}}>
         <Radio
+          {...register('ApplicationFee')}
           type="radio"
           value="Apple Pay"
-          checked={applicationFee === "Apple Pay"} // Step 3: Check if this radio is selected
+          checked={ApplicationFee === "Apple Pay"} // Step 3: Check if this radio is selected
           onChange={(e) => setApplicationFee(e.target.value)}
           style={{height: "20px", width: "20px", marginRight: "12px"}}
         />
@@ -412,9 +418,10 @@ const Formdetails: React.FC = () => {
 
           <label style={{justifyContent: "flex-start", alignItems: "center", display: "flex", marginTop: "15px"}}>
         <Radio
+          {...register('ApplicationFee')}
           type="radio"
           value="PayPal"
-          checked={applicationFee === "PayPal"} // Step 3: Check if this radio is selected
+          checked={ApplicationFee === "PayPal"} // Step 3: Check if this radio is selected
           onChange={(e) => setApplicationFee(e.target.value)}
           style={{height: "20px", width: "20px", marginRight: "12px"}}
         />
