@@ -56,7 +56,7 @@ const Formdetails: React.FC = () => {
 
   type FormData = yup.InferType<typeof schema>;
 
-  const { register, handleSubmit } = useForm<FormData>({
+  const { register } = useForm<FormData>({
     resolver: yupResolver(schema),
   });
 
