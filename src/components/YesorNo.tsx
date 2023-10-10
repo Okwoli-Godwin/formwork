@@ -62,7 +62,7 @@ const CompanyChoice = () => {
 					showConfirmButton: false,
 					timer: 2500,
 				}).then(() => {
-					navigate("/check-mail");
+					navigate("/");
 				});
 				setLoading(false);
 			})
