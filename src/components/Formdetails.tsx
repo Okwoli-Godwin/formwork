@@ -491,11 +491,15 @@ const Pl = styled.p`
   font-size: 13px;
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   span{
     text-decoration: underline;
     margin-right: 5px;
     margin-left: 5px;
+  }
+  @media screen and (max-width: 425px) {
+    
   }
 `
 const P = styled.p`
@@ -639,10 +643,10 @@ const Wrapper = styled.form`
   height: 100%;
   padding-top: 12px;
   @media screen and (max-width: 768px) {
-    width: 65%;
+    width: 80%;
   }
   @media screen and (max-width: 425px) {
-    width: 90%;
+    width: 95%;
   }
 `;
 
