@@ -134,9 +134,6 @@ const Formdetails: React.FC = () => {
           <Line></Line>
           <Below>
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <div style={{ marginLeft: '18px', fontWeight: '500', color: '#4c4d4e', marginTop: '10px' }}>
-                okwolig60@gmail.com
-              </div>
               <div style={{ marginLeft: '18px', marginTop: '1px', fontSize: '20px', color: '#5F6368', display: 'flex', alignItems: 'center' }}>
                 <MdOutlineMailLock />
                 <p>Not shared</p>
